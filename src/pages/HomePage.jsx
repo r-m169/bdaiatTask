@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../styles-for-pages/homePage.css'
-import Products from '../components/ProductList/Products';
+import Product from '../components/ProductList/Product';
 
 const HomePage = () => {
 
@@ -29,7 +29,7 @@ const HomePage = () => {
         <span>not</span> harder <br /> <span>Find</span> everything
         <span> you</span> need</h1></div>
         {products && products.map(product => (
-        <Products
+        <Product
           key={product.id}
           title={product.title}
           image={product.thumbnail}
