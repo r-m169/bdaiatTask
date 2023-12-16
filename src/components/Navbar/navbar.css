@@ -1,0 +1,44 @@
+
+*{
+    /* font-family: 'Montserrat', sans-serif; */
+   font-family: 'Space Grotesk', sans-serif;
+}
+:root{
+    --orange:#f96d00;
+    --black:#222831;
+    --dark-grey:#393e46;
+    --light-grey:#f2f2f2;
+}
+.websiteName{
+    font-size: 2em;
+    font-weight: bolder;
+    text-decoration: none;
+    color: var(--orange); 
+}
+.icons {
+    color:var(--orange) ;
+}
+.nav-item .nav-link .badge {
+    position: relative;
+    top: -15px; 
+    right: 0;
+    padding: 5px;
+    padding-bottom: 3px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: var(--orange); 
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2; 
+  }
+  
+  .nav-item .nav-link:hover .badge {
+    opacity: 0.8; 
+  }
+  
+  
+
+@media screen and (max-width:991px) {
+  
+}
