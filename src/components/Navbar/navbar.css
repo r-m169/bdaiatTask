@@ -1,14 +1,3 @@
-
-*{
-    /* font-family: 'Montserrat', sans-serif; */
-   font-family: 'Space Grotesk', sans-serif;
-}
-:root{
-    --orange:#f96d00;
-    --black:#222831;
-    --dark-grey:#393e46;
-    --light-grey:#f2f2f2;
-}
 .websiteName{
     font-size: 2em;
     font-weight: bolder;
@@ -39,6 +28,4 @@
   
   
 
-@media screen and (max-width:991px) {
   
-}
