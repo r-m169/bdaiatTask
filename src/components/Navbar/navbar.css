@@ -21,6 +21,7 @@
     font-weight: bold;
     z-index: 2; 
   }
+
   
   .nav-item .nav-link:hover .badge {
     opacity: 0.8; 
