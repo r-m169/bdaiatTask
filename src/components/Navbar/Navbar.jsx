@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useState , useEffect } from "react";
 import "./navbar.css";
-import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
   faCartShopping,
-  faLanguage,
   faMoon,
+  faEllipsisVertical,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/cartContext";
+import TabMenu from "../TabMenu/TabMenu";
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { cartItems } = useCart();
+  const [showTabMenu, setShowTabMenu] = useState(false);
+
+  const toggleTabMenu = () => {
+    setShowTabMenu(!showTabMenu);
+  };
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
@@ -30,8 +35,8 @@ const Navbar = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg p-4">
-        <div className="container-fluid  p-5 ">
-          <Link className="navbar websiteName" to="/" >
+        <div className="container-fluid p-5">
+          <Link className="navbar websiteName" to="/">
             Bonelle
           </Link>
           <button
@@ -49,16 +54,24 @@ const Navbar = () => {
             className="collapse navbar-collapse burger-menu"
             id="navbarNavDropdown"
           >
-            <ul className="navbar-nav ms-auto gap-5">
+            <ul className="navbar-nav ms-auto gap-5 d-flex ">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/" data-is-dark-mode={isDarkMode}>
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/"
+                  data-is-dark-mode={isDarkMode}
+                >
                   <FontAwesomeIcon icon={faHouse} className="icons" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/cart">
                   <div>
-                    <FontAwesomeIcon icon={faCartShopping} className="icons" />
+                    <FontAwesomeIcon
+                      icon={faCartShopping}
+                      className="icons"
+                    />
                     <span className="badge ">{cartItems.length}</span>
                   </div>
                 </Link>
@@ -69,12 +82,22 @@ const Navbar = () => {
                     icon={faMoon}
                     className="icons"
                     onClick={toggleDarkMode}
+                    data-is-dark-mode={isDarkMode}
                   />
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link " to="#"  >
-                <FontAwesomeIcon icon={faLanguage} className="icons" />
+              <li className="nav-item ">
+                <Link
+                  className="nav-link "
+                  to="#"
+                  onClick={toggleTabMenu}
+                  style={{ position: "relative" }}
+                >
+                  <FontAwesomeIcon
+                    icon={faEllipsisVertical}
+                    className="icons"
+                  />
+                  {showTabMenu && <TabMenu />}
                 </Link>
               </li>
             </ul>
