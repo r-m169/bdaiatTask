@@ -4,6 +4,7 @@ import Root from "./Root";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
+import { CartProvider } from "./context/cartContext";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router} />
+    <CartProvider>
+    <RouterProvider router={router} />
+    </CartProvider>
     </>
   );
 }
