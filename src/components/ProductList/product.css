@@ -1,0 +1,41 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    box-shadow: 0 0 3px var(--light-grey);
+}
+.imageContainer{
+    width: 100%;
+    /* height: 100%; */
+    height: auto;
+}
+.imageContainer img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.btn-addToCart{
+    text-decoration: none;
+    border: 1px solid var(--orange);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    margin-top: auto;
+    background-color: var(--orange);
+}
+.content{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+.btn-container {
+    margin-top: auto;
+    width: 100%;
+}
+
+.btn-addToCart{
+    width: 100%;
+
+}
