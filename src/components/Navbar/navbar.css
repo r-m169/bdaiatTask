@@ -27,6 +27,44 @@
     opacity: 0.8; 
   }
   
-  
+  /* Add these styles to your existing CSS or create a separate file */
+/* Style the dropdown button */
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.languages{
+  margin-top: 2.5%;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  /* z-index: 1; */
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Optional: Add styling for the dropdown links */
+.dropdown-content p {
+  padding: 6px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+/* Optional: Add styling for the dropdown links on hover */
+.dropdown-content p:hover {
+  background-color: #f1f1f1;
+}
+
 
   
