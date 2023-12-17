@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import './tabmenu.css';
 import LanguageSwitcher from '../languageSwitcher/LanguageSwitcher'; 
 
 const TabMenu = () => {
