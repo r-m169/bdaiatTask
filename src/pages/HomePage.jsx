@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import '../styles-for-pages/homePage.css';
 import Product from '../components/ProductList/Product';
-import CartPage from './CartPage'; 
 import { useCart } from '../context/cartContext';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '../components/languageSwitcher/LanguageSwitcher'; // Import the LanguageSwitcher component
 
 const HomePage = ({ isDarkMode }) => {
   const [products, setProducts] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
   const { addToCart } = useCart();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -24,35 +25,35 @@ const HomePage = ({ isDarkMode }) => {
     fetchProducts();
   }, []);
 
-  // const addToCart = (product) => {
-  //   setCartItems([...cartItems, product]);
-  // };
-
   return (
     <>
       <div className='Attention-grabbing'>
         <h1>
-          <span>Shop</span> smarter,
-          <span>not</span> harder <br />
-          <span>Find</span> everything
-          <span> you</span> need
+        <span>{t('Shop')}</span> {t('smarter')},
+          <span>{t('not')}</span> {t('harder')} <br />
+          <span>{t('Find')}</span> {t('everything')}
+          <span>{t('you')}</span> {t('need')}
         </h1>
+      </div>
+      <div>
+        <LanguageSwitcher /> 
       </div>
       <div className="productsPart">
         {products && products.map(product => (
           <Product
-            key={product.id}
-            title={product.title}
-            thumbnail={product.thumbnail}
-            description={product.description}
-            isDarkMode={isDarkMode}
-            addToCart={() => addToCart(product)} 
-          />
+          key={product.id}
+          title={t(product.title)}
+          productId={product.id}
+          thumbnail={product.thumbnail}
+          description={t(product.description)}
+          isDarkMode={isDarkMode}
+          addToCart={() => addToCart(product)}
+        />
+        
         ))}
       </div>
-      {/* <CartPage cartItems={cartItems} /> */}
     </>
   );
-}
+};
 
 export default HomePage;

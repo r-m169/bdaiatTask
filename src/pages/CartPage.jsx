@@ -1,11 +1,14 @@
 import React from 'react';
 import { useCart } from '../context/cartContext';
 import '../styles-for-pages/cart.css';
+import { useTranslation } from 'react-i18next';
+
 
 const CartPage = () => {
+  const { t, i18n } = useTranslation();
   const { cartItems, removeItem, increaseQuantity, decreaseQuantity, clearCart } =
     useCart();
-
+  
   const calculateTotalPrice = () => {
     return cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
@@ -47,7 +50,7 @@ const CartPage = () => {
           </button>
         </>
       ) : (
-        <p className='empty-statement'>Your cart is empty</p>
+          <p className='empty-statement'>{t('Your cart is empty')}</p>
       )}
     </div>
   );
