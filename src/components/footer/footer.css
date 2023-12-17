@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 35px;
+    /* background-color: var(--orange); */
+    color: var(--orange);
+    width: 100%;
+}
