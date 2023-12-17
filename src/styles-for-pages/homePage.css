@@ -1,0 +1,32 @@
+.Attention-grabbing{
+    display: flex;
+    justify-content: center;
+
+}
+.Attention-grabbing span{
+    color: var(--orange);
+}  
+.productsPart {
+    display: flex;
+    margin-top: 70px;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+  
+  
+@media screen and (max-width:400px) {
+    .Attention-grabbing{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+       
+    }
+   
+}
+@media screen and (max-width:280px) {
+    .Attention-grabbing {
+       opacity: 0;
+    }
+}
